@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | EduVault</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="auth-page">
+
+    <header class="auth-navbar">
+        <a href="{% url 'home' %}" class="auth-logo">
+            <span class="auth-logo-icon">E</span>
+            <span>EduVault</span>
+        </a>
+
+        <a href="{% url 'login' %}" class="auth-nav-link">
+            Already a member? <strong>Sign in →</strong>
+        </a>
+    </header>
+
+    <main class="auth-main">
+
+        <section class="auth-card">
+
+            <!-- Left Panel -->
+            <div class="auth-intro">
+
+                <div class="auth-badge">
+                    ✨ YOUR FUTURE STARTS HERE
+                </div>
+
+                <h1>
+                    Every great journey
+                    <span>begins with one step.</span>
+                </h1>
+
+                <p class="auth-intro-text">
+                    Create your EduVault account and start building
+                    a future you can be proud of.
+                </p>
+
+                <div class="auth-benefits">
+
+                    <div class="auth-benefit">
+                        <span class="benefit-icon">🎓</span>
+                        <div>
+                            <h3>Your academic journey</h3>
+                            <p>Keep your academic profile organised.</p>
+                        </div>
+                    </div>
+
+                    <div class="auth-benefit">
+                        <span class="benefit-icon">💻</span>
+                        <div>
+                            <h3>Your skills and projects</h3>
+                            <p>Showcase your work and achievements.</p>
+                        </div>
+                    </div>
+
+                    <div class="auth-benefit">
+                        <span class="benefit-icon">🏆</span>
+                        <div>
+                            <h3>Your future opportunities</h3>
+                            <p>Build a portfolio as you grow.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="auth-quote">
+                    🌱 Small steps today. Bigger possibilities tomorrow.
+                </div>
+
+            </div>
+
+            <!-- Registration Form -->
+            <div class="auth-form-panel">
+
+                <div class="auth-form-heading">
+                    <p class="auth-eyebrow">JOIN THE COMMUNITY</p>
+
+                    <h2>Create your account</h2>
+
+                    <p>Enter your details to get started.</p>
+                </div>
+
+                <!-- Display Django Messages -->
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="auth-errors">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <form method="post" class="auth-form">
+
+                    {% csrf_token %}
+
+                    <div class="auth-field">
+                        <label for="email">College Email ID</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="yourname@college.edu"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <small>Enter your registered college email.</small>
+                    </div>
+
+                    <div class="auth-field">
+                        <label for="password">Password</label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a strong password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('password', this)"
+                                aria-label="Show password"
+                            >👁️</button>
+                        </div>
+
+                        <small>Use at least 8 characters.</small>
+                    </div>
+
+                    <div class="auth-field">
+                        <label for="confirm_password">
+                            Confirm Password
+                        </label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="confirm_password"
+                                name="confirm_password"
+                                placeholder="Enter your password again"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('confirm_password', this)"
+                                aria-label="Show password"
+                            >👁️</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="auth-submit">
+                        Create My Account <span>→</span>
+                    </button>
+
+                    <p class="auth-terms">
+                        By creating an account, you agree to use EduVault
+                        responsibly.
+                    </p>
+
+                </form>
+
+                <div class="auth-divider">
+                    <span>ALREADY REGISTERED?</span>
+                </div>
+
+                <a href="{% url 'login' %}" class="auth-login-button">
+                    Sign in to your account
+                </a>
+
+                <a href="{% url 'home' %}" class="auth-back">
+                    ← Back to homepage
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="auth-footer">
+        © 2026 EduVault · Small steps. Real progress.
+    </footer>
+
+    <script>
+        function togglePassword(inputId, button) {
+            const input = document.getElementById(inputId);
+
+            if (!input) return;
+
+            const isHidden = input.type === "password";
+
+            input.type = isHidden ? "text" : "password";
+
+            button.textContent = isHidden ? "🙈" : "👁️";
+
+            button.setAttribute(
+                "aria-label",
+                isHidden ? "Hide password" : "Show password"
+            );
+        }
+    </script>
+
+</body>
+</html>

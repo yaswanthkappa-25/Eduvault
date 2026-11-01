@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduVault | Your Journey Starts Here</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <a href="/" class="logo">
+            <img
+                src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS241_wOR_Yl_GF8reQeFOQAP9Zt2C_XOl0KMku8mBa0KguIdgs"
+                alt="Eduvault Logo"
+                class="logo-img"
+            >
+            <span>EduVault</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#explore">Explore</a>
+            <a href="#journey">My Journey</a>
+        </nav>
+
+        <a href="{% url 'register' %}" class="nav-button">
+             Get Started →
+        </a>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="welcome-label">
+                    ✨ EVERY STUDENT HAS POTENTIAL
+                </div>
+
+                <h1>
+                    Your future doesn't need
+                    <span>to start perfectly.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover your interests, learn new skills, complete
+                    small challenges, and build a future you feel proud of.
+                    Start wherever you are.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="{% url 'register' %}" class="primary-button">
+                        Start My Journey
+                        <span>→</span>
+                    </a>
+
+                    <a href="#journey" class="secondary-button">
+                        See How It Works
+                    </a>
+
+                </div>
+
+                <div class="trust-note">
+                    🌱 Beginner friendly &nbsp; · &nbsp;
+                    🎯 Learn at your own pace
+                </div>
+
+            </div>
+
+
+            <!-- Visual Journey Card -->
+            <div class="journey-card">
+
+                <div class="card-top">
+                    <div>
+                        <p class="card-eyebrow">YOUR NEXT CHAPTER</p>
+                        <h2>One step at a time.</h2>
+                    </div>
+
+                    <div class="sun-icon">✦</div>
+                </div>
+
+                <div class="journey-steps">
+
+                    <div class="journey-step">
+                        <div class="step-icon">🌱</div>
+
+                        <div class="step-text">
+                            <h3>Discover yourself</h3>
+                            <p>Find what interests you.</p>
+                        </div>
+
+                        <span class="step-arrow">01</span>
+                    </div>
+
+                    <div class="journey-step">
+                        <div class="step-icon">📚</div>
+
+                        <div class="step-text">
+                            <h3>Learn something new</h3>
+                            <p>Start with simple tasks.</p>
+                        </div>
+
+                        <span class="step-arrow">02</span>
+                    </div>
+
+                    <div class="journey-step">
+                        <div class="step-icon">🏆</div>
+
+                        <div class="step-text">
+                            <h3>Celebrate your growth</h3>
+                            <p>Every small win matters.</p>
+                        </div>
+
+                        <span class="step-arrow">03</span>
+                    </div>
+
+                </div>
+
+                <div class="encouragement">
+                    <span>💛</span>
+                    <p>You don't have to do everything today.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Explore Section -->
+        <section class="explore-section" id="explore">
+
+            <div class="section-heading">
+
+                <p class="section-label">YOUR JOURNEY, YOUR CHOICE</p>
+
+                <h2>What would you like to do today?</h2>
+
+                <p>
+                    Choose what you need. We'll help you with the next step.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <a href="#journey" class="feature-card">
+
+                    <div class="feature-icon green">🌱</div>
+
+                    <h3>I'm a beginner</h3>
+
+                    <p>
+                        Start learning from zero with simple,
+                        beginner-friendly tasks.
+                    </p>
+
+                    <span class="feature-link">Find my starting point →</span>
+
+                </a>
+
+
+                <a href="#journey" class="feature-card">
+
+                    <div class="feature-icon blue">💻</div>
+
+                    <h3>I want new skills</h3>
+
+                    <p>
+                        Explore programming, cybersecurity, AI,
+                        communication and more.
+                    </p>
+
+                    <span class="feature-link">Explore skills →</span>
+
+                </a>
+
+
+                <a href="#journey" class="feature-card">
+
+                    <div class="feature-icon orange">🎯</div>
+
+                    <h3>I'm preparing for jobs</h3>
+
+                    <p>
+                        Practise aptitude, reasoning, interviews
+                        and placement skills.
+                    </p>
+
+                    <span class="feature-link">Prepare for my future →</span>
+
+                </a>
+
+
+                <a href="#journey" class="feature-card">
+
+                    <div class="feature-icon purple">📂</div>
+
+                    <h3>Build my portfolio</h3>
+
+                    <p>
+                        Organise your projects, certificates,
+                        skills and achievements.
+                    </p>
+
+                    <span class="feature-link">Build my profile →</span>
+
+                </a>
+
+
+                <a href="#journey" class="feature-card">
+
+                    <div class="feature-icon pink">🏆</div>
+
+                    <h3>Track my progress</h3>
+
+                    <p>
+                        See what you've learned and celebrate
+                        the progress you make.
+                    </p>
+
+                    <span class="feature-link">View my journey →</span>
+
+                </a>
+
+
+                <a href="#journey" class="feature-card">
+
+                    <div class="feature-icon yellow">🧭</div>
+
+                    <h3>Help me choose</h3>
+
+                    <p>
+                        Not sure what to do next? Explore
+                        options based on your interests.
+                    </p>
+
+                    <span class="feature-link">Discover my path →</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Motivation Section -->
+        <section class="motivation-section" id="journey">
+
+            <div class="motivation-icon">🌻</div>
+
+            <p class="section-label">A LITTLE REMINDER</p>
+
+            <h2>
+                You don't need to be the best
+                <span>to begin.</span>
+            </h2>
+
+            <p>
+                You just need to be willing to take the first step.
+                Your journey is yours. Let's make it count.
+            </p>
+
+            <a href="#home" class="primary-button">
+                Let's Begin →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <a href="/" class="logo">
+            <span class="logo-icon">E</span>
+            <span>EduVault</span>
+        </a>
+
+        <p>Small steps. Real progress. A future of your own.</p>
+
+        <span>© 2026 EduVault</span>
+
+    </footer>
+
+</body>
+
+</html>
